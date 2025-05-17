@@ -22,6 +22,8 @@ from langflow.api.v1 import (
 )
 from langflow.api.v2 import files_router as files_router_v2
 
+from langflow.api.userinput_router import userinput_router as userinput_router
+
 router = APIRouter(
     prefix="/api",
 )
@@ -51,8 +53,10 @@ router_v1.include_router(starter_projects_router)
 router_v1.include_router(voice_mode_router)
 router_v1.include_router(mcp_router)
 router_v1.include_router(mcp_projects_router)
+router.include_router(userinput_router)
 
 router_v2.include_router(files_router_v2)
 
 router.include_router(router_v1)
 router.include_router(router_v2)
+router.include_router(userinput_router)

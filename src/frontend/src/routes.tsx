@@ -34,6 +34,7 @@ import GlobalVariablesPage from "./pages/SettingsPage/pages/GlobalVariablesPage"
 import MessagesPage from "./pages/SettingsPage/pages/messagesPage";
 import ShortcutsPage from "./pages/SettingsPage/pages/ShortcutsPage";
 import ViewPage from "./pages/ViewPage";
+import UserInputPage from "./pages/UserInput";
 
 const AdminPage = lazy(() => import("./pages/AdminPage"));
 const LoginAdminPage = lazy(() => import("./pages/AdminPage/LoginPage"));
@@ -45,6 +46,7 @@ const SignUp = lazy(() => import("./pages/SignUpPage"));
 
 const router = createBrowserRouter(
   createRoutesFromElements([
+    <Route path = "/userinput" element = {<UserInputPage />}/>,
     <Route path="/playground/:id/">
       <Route
         path=""
